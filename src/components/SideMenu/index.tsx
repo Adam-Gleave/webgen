@@ -10,16 +10,16 @@ const sidemenuStyle: React.CSSProperties = {
 type SideMenuProps = {
     canvasWidth: number,
     canvasHeight: number,
+    seed: string,
     setCanvasWidth: (width: number) => void,
     setCanvasHeight: (width: number) => void,
+    setSeed: (seed: string) => void,
 };
 
-export const SideMenu = (props: SideMenuProps) => {
-    return (
-        <div style={sidemenuStyle}>
-            <DocumentPanel {...props} />
-        </div>
-    );
-};
+export const SideMenu = (props: SideMenuProps) => (
+    <div style={sidemenuStyle}>
+        <DocumentPanel {...props} />
+    </div>
+);
 
 export default SideMenu;

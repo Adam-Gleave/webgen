@@ -9,6 +9,7 @@ const { Header, Content, Sider } = Layout;
 const App = () => {
     const [canvasWidth, setCanvasWidth] = React.useState(800);
     const [canvasHeight, setCanvasHeight] = React.useState(800);
+    const [seed, setSeed] = React.useState('2304986');
 
     return (
         <div className='App'>
@@ -22,13 +23,19 @@ const App = () => {
                     <Sider breakpoint={'lg'} width={400} collapsedWidth={0}>
                         <SideMenu 
                             canvasWidth={canvasWidth} 
-                            canvasHeight={canvasHeight} 
+                            canvasHeight={canvasHeight}
+                            seed={seed} 
                             setCanvasWidth={setCanvasWidth} 
                             setCanvasHeight={setCanvasHeight} 
+                            setSeed={setSeed}
                         />
                     </Sider>
                     <Content>
-                        <Canvas width={canvasWidth} height={canvasHeight} />
+                        <Canvas 
+                            width={canvasWidth} 
+                            height={canvasHeight} 
+                            seed={seed}
+                        />
                     </Content>
                 </Layout>
             </Layout>

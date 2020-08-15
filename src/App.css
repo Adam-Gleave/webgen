@@ -6,6 +6,10 @@ html {
     padding: 0;
 }
 
+#canvas-container {
+    overflow: auto;
+}
+
 #canvas {
     position: absolute;
     margin: auto;
@@ -13,6 +17,6 @@ html {
     left: 0; 
     right: 0; 
     bottom: 0; 
-    background-color: 'white';
+    background-color: white;
     box-shadow: 0 0 10px lightgray;
 }
