@@ -1,5 +1,5 @@
 import React from 'react';
-import { Collapse, Input, InputNumber, Form } from 'antd';
+import { Collapse, InputNumber, Form } from 'antd';
 import formLayout from './layout'
 
 const { Panel } = Collapse;
@@ -7,10 +7,8 @@ const { Panel } = Collapse;
 type DocumentPanelProps = {
     canvasWidth: number,
     canvasHeight: number,
-    seed: string,
     setCanvasWidth: (width: number) => void,
     setCanvasHeight: (width: number) => void,
-    setSeed: (seed: string) => void,
 };
 
 export const DocumentPanel = (props: DocumentPanelProps) => (
@@ -40,17 +38,6 @@ export const DocumentPanel = (props: DocumentPanelProps) => (
                         onChange={value => {
                             if (value) {
                                 props.setCanvasHeight(+value);
-                            }
-                        }}
-                    />
-                </Form.Item>
-                <Form.Item label='Seed'>
-                    <Input
-                        value={props.seed}
-                        style={{width: '100%'}}
-                        onChange={event => {
-                            if (event.target.value) {
-                                props.setSeed(event.target.value);
                             }
                         }}
                     />

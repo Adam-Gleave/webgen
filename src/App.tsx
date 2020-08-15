@@ -9,7 +9,8 @@ const { Header, Content, Sider } = Layout;
 const App = () => {
     const [canvasWidth, setCanvasWidth] = React.useState(800);
     const [canvasHeight, setCanvasHeight] = React.useState(800);
-    const [seed, setSeed] = React.useState('2304986');
+    const [seed, setSeed] = React.useState((Math.random() + 1).toString(36).substring(2, 12));
+    const [regularity, setRegularity] = React.useState(3);
 
     return (
         <div className='App'>
@@ -25,9 +26,11 @@ const App = () => {
                             canvasWidth={canvasWidth} 
                             canvasHeight={canvasHeight}
                             seed={seed} 
+                            regularity={regularity}
                             setCanvasWidth={setCanvasWidth} 
                             setCanvasHeight={setCanvasHeight} 
                             setSeed={setSeed}
+                            setRegularity={setRegularity}
                         />
                     </Sider>
                     <Content>
@@ -35,6 +38,7 @@ const App = () => {
                             width={canvasWidth} 
                             height={canvasHeight} 
                             seed={seed}
+                            regularity={regularity}
                         />
                     </Content>
                 </Layout>
